@@ -2,9 +2,14 @@ version: "3.4"
 services:
   cdt:
     build: .
-    entrypoint: node
-    command: '/usr/local/lib/node_modules/cdt-gdb-adapter/dist/debugTargetAdapter.js --server=50000'
+    command:
+      - /bin/sh
+      - -c
+      - |
+        websockify localhost:50001 localhost:50000 &
+        node /usr/local/lib/node_modules/cdt-gdb-adapter/dist/debugTargetAdapter.js --server=50000
     ports:
       - "50000:50000"
+      - "50001:50001"
     volumes:
       - ./:/home
