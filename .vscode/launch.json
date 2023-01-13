@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Generic",
-            "type": "generic-debug",
-            "request": "launch",
+            "name": "CDT",
+            "type": "arm-debug",
+            "request": "attach",
             "address": "ws://localhost:50001",
             "program": "/home/hello",
             "pathMapping": {
