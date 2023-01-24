@@ -5,7 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Remote Debug",
+            "name": "Remote Debug (Raw Socket)",
+            "type": "arm-debug",
+            "request": "attach",
+            "address": "50000",
+            "pathMapping": {
+                "/home": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Remote Debug (WebSocket)",
             "type": "arm-debug",
             "request": "attach",
             "address": "ws://localhost:50001",
