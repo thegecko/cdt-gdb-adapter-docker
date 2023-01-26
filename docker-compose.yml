@@ -7,7 +7,7 @@ services:
       - -c
       - |
         websockify localhost:50001 localhost:50000 &
-        node /usr/local/lib/node_modules/cdt-gdb-adapter/dist/debugTargetAdapter.js --server=50000 --config-frozen='{"program": "/home/hello"}'
+        node /usr/local/lib/node_modules/cdt-gdb-adapter/dist/debugTargetAdapter.js --server=50000 --config-frozen='{"request": "launch", "program": "/home/hello"}'
     ports:
       - "50000:50000"
       - "50001:50001"
